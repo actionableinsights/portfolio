@@ -1,28 +1,58 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Projects from './Projects';
+import SocialProfiles from './SocialProfiles';
+import profile from './assets/profile.png';
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    //use this convention for constructor-less code
+    //class property syntax
+    state = { displayBio: false, user_language: 'en'};
+
+    toggleDisplayBio= () => {
+        this.setState({displayBio: !this.state.displayBio})
+    }
+    // constructor(){
+    //     super();//isrequired 
+    //     this.state = { displayBio: false};
+
+    //     this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+    // }
+
+    // toggleDisplayBio(){
+    //     this.setState({displayBio: !this.state.displayBio})
+    // }
+    
+    // equivalent to render = ()=> 
+    render() {
+
+            //null means not rendered, skipped
+
+        return (
+            <div>
+                <img src={profile} alt='me' className='profile' />
+                <h1> Hello </h1>
+                <p> This is Simon from deutschenglisch. I like to translate from German into English</p>
+                <p> I'm always looking forward to working on meaningful projects. Take a look at what I have done recently</p>
+                {this.state.displayBio ? (
+            <div>
+            <p> I live in XXX </p>
+            <p> I code in JS only  </p>
+            <p> <a href="https://docdro.id/JsWSDv9">CV. Punch in 1234 </a> </p>
+    <button onClick={this.toggleDisplayBio}>Show less </button>
+        </div> 
+        ) : (<div>
+            <button onClick={this.toggleDisplayBio}>Read more...</button>
+        </div>)}
+        <hr />
+        <Projects />
+        <hr />
+        <SocialProfiles />        
+        </div>
+        )
+
+    }
+
 }
 
 export default App;
