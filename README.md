@@ -1,3 +1,31 @@
+
+# switching to Express
+
+$ npm i express@4.16.4 --save
+
+Index.js
+
+const express = require('express');
+const path = require('path');
+
+const app = express();
+
+app.use(express.static(path.join(__dirname, 'dist')));
+## Using Parcel
+run using npm run dev
+
+
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`listening on ${PORT}`));
+
+
+then in package.json
+"start": "parcel build src/index.html"
+
+11.08 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
