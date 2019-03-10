@@ -14,13 +14,9 @@ class SocialProfile extends Component {
     
 
 }
-
-
-class SocialProfiles extends Component {
-   
-    
-    render() {
-        return (
+//stateless easier to read
+const SocialProfiles = (props) =>  
+(
             <div>
             <h2>Let's connect!</h2>
             <div>
@@ -34,9 +30,5 @@ class SocialProfiles extends Component {
             </div>
 
         )
-
-    }
-
-}
 
 export default SocialProfiles;

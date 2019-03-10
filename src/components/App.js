@@ -3,6 +3,8 @@ import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
 import profile from '../assets/mebig.jpg';
 import Title from './Title';
+import Jokes from './Jokes';
+// import Cryptos from './Cryptos';
 
 class App extends Component {
     //use this convention for constructor-less code
@@ -40,6 +42,9 @@ class App extends Component {
             <div>
             <p> I live in XXX </p>
             <p> I code in JS only  </p>
+
+
+
             <p> <a href="https://docdro.id/JsWSDv9">CV. Punch in 1234 </a> </p>
     <button onClick={this.toggleDisplayBio}>Show less </button>
         </div> 
@@ -49,7 +54,11 @@ class App extends Component {
         <hr />
         <Projects />
         <hr />
-        <SocialProfiles />        
+        <SocialProfiles />     
+        <hr />
+        <Jokes />
+
+
         </div>
         )
 
